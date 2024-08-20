@@ -17,7 +17,7 @@ export default function UserPage() {
             .then(res => res.json())
             .then(user => { setUser(user) })
             .catch(error => console.error('Error fetching users:', error));
-    }, []);
+    }, [id]);
 
     async function handleEditUser(ev, data) {
         ev.preventDefault();
