@@ -5,7 +5,7 @@ export default function AddToCartButton({ image, basePrice, hasOptions, onAddToC
     if (!hasOptions) {
         return (
             <div className='flying-button-parent mt-4'>
-                <FlyingButton src={image} targetTop={'5%'} targetLeft={'95%'}>
+                <FlyingButton src={image} alt='image' targetTop={'5%'} targetLeft={'95%'}>
                     <div onClick={onAddToCart}>
                         Add to cart ${basePrice}
                     </div>
