@@ -94,13 +94,14 @@ export default function MenuItem(menuItem) {
                                 targetTop={'5%'}
                                 targetLeft={'95%'}
                                 src={image}>
-                                <div className="primary text-primary sticky bottom-2"
+                                <div className="w-full primary text-primary sticky bottom-2 flex justify-center"
                                     onClick={handleAddToCart}>
-                                    Add to cart ${selectedPrice}
+                                    <span className="w-full flex justify-center">Add to cart ${selectedPrice}</span>
                                 </div>
                             </FlyingButton>
 
-                            <button className="mt-4" onClick={() => setShowPopup(false)}>Cancel</button>
+                            <button className="mt-4 w-full flex justify-center"
+                                onClick={() => setShowPopup(false)}>Cancel</button>
                         </div>
                     </div>
                 )
