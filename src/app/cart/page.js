@@ -166,7 +166,7 @@ export default function CartPage() {
             return;
         }
 
-        if (!profileData?.name || !profileData?.email || !address?.phoneNum) {
+        if (!profileData?.name || !profileData?.email || !address?.phoneNum || !address.streetAddress || !address.city || !address.pinCode) {
             toast.error('Missing user information. Please ensure your name, email, and phone number are provided.');
             return;
         }

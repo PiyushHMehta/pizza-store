@@ -71,6 +71,7 @@ export default function Orders() {
                     <tr className="bg-gray-400 text-white">
                         <th className="px-4 py-2">Customer Name</th>
                         <th className="px-4 py-2">Phone Number</th>
+                        <th className="px-4 py-2">Address</th>
                         <th className="px-4 py-2">Dish Name</th>
                         <th className="px-4 py-2">Toppings</th>
                         <th className="px-4 py-2">Size</th>
@@ -89,6 +90,9 @@ export default function Orders() {
                                             <>
                                                 <td className="px-4 py-2" rowSpan={order.cartItems.length}>{order.userName}</td>
                                                 <td className="px-4 py-2" rowSpan={order.cartItems.length}>{order.phoneNum}</td>
+                                                <td className="px-4 py-2" rowSpan={order.cartItems.length}>
+                                                    {order.streetAddress}, {order.city}, {order.pinCode}
+                                                </td>
                                             </>
                                         )}
                                         <td className="px-4 py-2">{item.name}</td>
