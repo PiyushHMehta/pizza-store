@@ -166,6 +166,11 @@ export default function CartPage() {
             return;
         }
 
+        if (!profileData?.name || !profileData?.email || !address?.phoneNum) {
+            toast.error('Missing user information. Please ensure your name, email, and phone number are provided.');
+            return;
+        }
+
         try {
             const res = await fetch('/api/checkout', {
                 method: 'POST',

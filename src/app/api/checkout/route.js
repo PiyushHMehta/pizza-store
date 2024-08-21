@@ -53,7 +53,9 @@
 
 import { Order } from "@/models/Orders";
 import mongoose from "mongoose";
+import { getServerSession } from "next-auth";
 import Razorpay from "razorpay";
+import { authOptions } from "../auth/[...nextauth]/route";
 
 export async function GET() {
     try {
@@ -67,8 +69,17 @@ export async function GET() {
 }
 
 export async function POST(req) {
+
     try {
+        const session = await getServerSession(authOptions);
+        const userName = session?.user?.name;
+        const userEmail = session?.user?.email;
+
         const { totalPrice } = await req.json();
+
+        if (!userName || !userEmail) {
+            return new Response(JSON.stringify({ error: "Invalid credentials, cannot proceed" }), { status: 400 });
+        }
 
         if (!totalPrice || totalPrice <= 0) {
             return new Response(JSON.stringify({ error: "Invalid amount, cannot proceed" }), { status: 400 });

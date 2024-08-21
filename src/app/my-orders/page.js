@@ -7,6 +7,7 @@ import Left from "@/components/icons/Left";
 import Right from "@/components/icons/Right";
 import { cartItemsPrice } from "@/components/AppContext";
 import Pagination from "@/components/layout/Pagination";
+import UserTabs from "@/components/layout/UserTabs";
 
 export default function UserOrders() {
     const { data: session, status } = useSession();
@@ -64,9 +65,9 @@ export default function UserOrders() {
 
     return (
         <section className="mt-8 px-4">
-            <h1 className="text-xl font-bold mb-4 text-center">My Orders</h1>
+            <UserTabs isAdmin={false} />
 
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 mt-8">
                 {currentOrders.map((order, orderIndex) => (
                     <div key={orderIndex} className="bg-white p-4 rounded-lg shadow-md">
                         {order.cartItems.map((item, itemIndex) => (
