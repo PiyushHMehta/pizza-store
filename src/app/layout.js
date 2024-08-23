@@ -24,12 +24,12 @@ export default function RootLayout({ children }) {
         <meta name="author" content={metadata.author} />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/images/pizza.jpg" />
+        <meta property="og:image" content="/pizza.png" />
         <meta property="og:url" content="https://my-pizzza-store.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="/images/pizza.jpg" />
+        <meta name="twitter:image" content="/pizza.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
