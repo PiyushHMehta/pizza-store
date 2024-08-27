@@ -19,8 +19,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <Head>
         <title>{metadata.title}</title>
-        <link rel="icon" href="/pizza.png" type="image/x-icon" />
-        {/* <link rel="icon" href="/pizza.png" type="image/png" /> */}
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content={metadata.author} />
